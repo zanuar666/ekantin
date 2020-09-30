@@ -1,9 +1,8 @@
 .login-box {
-    margin: 10%;
+    margin-top: 25%;
 }
 
 .login-box .card {
-    width: 400px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -21,21 +20,15 @@
     border: 0;
 }
 
+.login-box .card .card-body .form-input input {
+    color: #fff;
+}
+
 .login-box .card .card-body .form-input button {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-weight: bold;
 }
 
 .btn.btn-flat {
     border-radius: 2px;
-}
-
-@media screen and (max-width: 540px) {
-    .login-box {
-        margin: 5%;
-    }
-
-    .login-box .card {
-        width: 100%;
-    }
 }
