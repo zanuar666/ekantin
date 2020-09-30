@@ -30,7 +30,8 @@
                         <div class="card-body">
                             <h1 class="text-center text-white">E-Kantin</h1>
 
-                            <form id="frmLogin" action="{{ url()->current() . '/auth' }}">
+                            <form id="frmLogin" action="{{ url()->current() . '/auth' }}" method="POST" autocomplete="off">
+                                {{ csrf_field() }}
                                 <div class="form-input">
                                     <div class="form-group">
                                         <div class="input-group">
@@ -56,7 +57,7 @@
                                         </div>
                                     </div>
 
-                                    <button type="button" class="btn btn-primary btn-flat btn-block">LOGIN</button>
+                                    <button type="submit" class="btn btn-primary btn-flat btn-block">LOGIN</button>
                                 </div>
                             </form>
                         </div>
@@ -66,9 +67,46 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/sweetalert-2.1.2/dist/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+
+    <script>
+        $('#frmLogin').submit(function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+            let elementsForm = $(this).find('button, input');
+
+            elementsForm.attr('disabled', true);
+
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                dataType: 'json',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    elementsForm.removeAttr('disabled');
+
+                    if (response.RESULT == 'OK') {
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        return swalError(response.MESSAGE);
+                    }
+                }
+            }).fail(function() {
+                elementsForm.removeAttr('disabled');
+
+                return swalError();
+            });
+        });
+    </script>
 </body>
 
 </html>
