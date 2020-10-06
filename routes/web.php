@@ -13,5 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'DashboardController@index');
 Route::get('/login', 'LoginController@index');
+Route::post('/login/auth','LoginController@auth');
+Route::get('logout','LoginController@logout');
+
+Route::group(['middleware' => ['CekSession']], function () {
+    Route::get('dashboard', 'DashboardController@index');
+});
