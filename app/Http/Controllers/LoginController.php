@@ -27,9 +27,9 @@ class LoginController extends Controller
         $user = $auth->cekUser($request->input('username'), $request->input('password'));
 
         if ($user != null) {
-            if ($user->roleId !== 3) {
+            if ($user->roleId !== eKantin::ID_SISWA) {
                 $condition = true;
-            } else if ($user->roleId === 3) {
+            } else if ($user->roleId === eKantin::ID_SISWA) {
                 return JSONResponseDefault(eKantin::FAILED, 'Role cannot login in web application');
             }
         }
