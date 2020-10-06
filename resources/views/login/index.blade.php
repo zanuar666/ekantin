@@ -23,17 +23,32 @@
     <![endif]-->
 
     <style>
+        html,
+        body {
+            height: 100%;
+        }
+
         body {
             background: url(<?= asset('assets/img/bg.jpg') ?>);
             background-size: cover;
             background-repeat: repeat-y;
             background-attachment: fixed;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: flex;
+            -ms-flex-align: center;
+            -ms-flex-pack: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
     </style>
 </head>
 
-<body>
-    <div class="container-fluid">
+<body class="text-center">
+    <div class="container">
         <div class="row">
             <div class="col-lg-4 offset-lg-4">
                 <div class="login-box">
