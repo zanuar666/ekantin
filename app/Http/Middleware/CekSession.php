@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class CekSession
 {
@@ -16,7 +16,7 @@ class CekSession
      */
     public function handle($request, Closure $next)
     {
-        if(Session::get('is_login') == null || Session::get('is_login') == ''){
+        if (Session::get('is_login') == null || Session::get('is_login') == '') {
             return redirect('login');
         }
         return $next($request);

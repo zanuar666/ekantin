@@ -49,10 +49,9 @@
 
         <ul class="nav ml-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user"></i>
-                    {{session('name')}}
+                    {{ session('name') }}
                 </a>
 
                 <div class="dropdown-menu">

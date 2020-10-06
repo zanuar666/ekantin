@@ -56,8 +56,7 @@
                         <div class="card-body">
                             <h1 class="text-center text-white">E-Kantin</h1>
 
-                            <form id="frmLogin" action="{{ url()->current() . '/auth' }}" method="POST"
-                                autocomplete="off">
+                            <form id="frmLogin" action="{{ url()->current() . '/auth' }}" method="POST" autocomplete="off">
                                 {{ csrf_field() }}
                                 <div class="form-input">
                                     <div class="form-group">
@@ -68,8 +67,7 @@
                                                 </span>
                                             </div>
 
-                                            <input type="text" name="username" class="form-control"
-                                                placeholder="Username" required>
+                                            <input type="text" name="username" class="form-control" placeholder="Username" required>
                                         </div>
                                     </div>
 
@@ -81,8 +79,7 @@
                                                 </span>
                                             </div>
 
-                                            <input type="password" name="password" class="form-control"
-                                                placeholder="Password" required>
+                                            <input type="password" name="password" class="form-control" placeholder="Password" required>
                                         </div>
                                     </div>
 
@@ -124,7 +121,7 @@
                     elementsForm.removeAttr('disabled');
 
                     if (response.RESULT == 'OK') {
-                       location.href = 'dashboard';
+                        location.href = 'dashboard';
                     } else {
                         return swalError(response.MESSAGE);
                     }
