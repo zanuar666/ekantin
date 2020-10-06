@@ -1,5 +1,5 @@
 .login-box {
-    margin-top: 25%;
+    margin-top: 10%;
 }
 
 .login-box .card {
@@ -25,8 +25,9 @@
 }
 
 .login-box .card .card-body .form-input button {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-weight: bold;
+    width: 8rem;
 }
 
 .btn.btn-flat {

@@ -35,7 +35,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-lg-4 offset-lg-4">
                 <div class="login-box">
                     <div class="card">
                         <div class="card-body">
@@ -68,7 +68,9 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-warning btn-flat btn-block">LOGIN</button>
+                                    <div class="float-right">
+                                        <button type="submit" class="btn btn-primary btn-flat">LOGIN</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
