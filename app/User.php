@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $primaryKey = "userId";
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +38,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // fungsi join ke tabel role
+    public function role(){
+        return $this->belongsTo('App\Roles','roleId');
+    }
+
+    // Fungsi Join ke Tabel Barang
+    public function barang(){
+        return $this->hasMany('App\Barang', 'userId');
+    }
+
+    // Fungsi Join Ke Tabel Withdraw
+    public function withdraw(){
+       return $this->hasMany('App\Withdraw','userId');
+    }
+    
+    // Fungsi Join ke Tabel Topup History
+    public function topupHistory(){
+        return $this->hasMany('App\TopupHistory','userId');
+    }
 }
