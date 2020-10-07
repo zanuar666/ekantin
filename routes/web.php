@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return redirect('dashboard');
+});
+
 Route::get('login', 'LoginController@index');
 Route::post('login/auth', 'LoginController@auth');
 Route::get('logout', 'LoginController@logout');

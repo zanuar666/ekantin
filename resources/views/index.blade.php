@@ -23,29 +23,13 @@
     <![endif]-->
 </head>
 
-{{-- <style>
-    .sidebarr {
-        width: 20%;
-        height: 100%;
-    }
-
-    .sidebar {
-        padding-top: 50%;
-    }
-
-    .logos {
-        height: 100px;
-        width: 100px;
-    }
-
-    .navi {
-        padding-top: 10%;
-    }
-</style> --}}
-
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-custom fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-custom fixed-top">
         <a class="navbar-brand" href="{{ url('/') }}">E-Kantin</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <ul class="nav ml-auto">
             <li class="nav-item dropdown">
@@ -69,25 +53,47 @@
                 </div>
             </li>
         </ul>
-    </nav>
 
-    {{-- <aside class="sidebarr">
-        <div class="sidebar text-center">
-            <div class="profile-image">
-                <img src="https://bnpb.go.id/uploads/organization/default.jpg" alt="" class="img-fluid img-thumbnail rounded-circle logos">
-                <h6>{{session('name')}}</h6>
-    </div>
-    </div>
-    <nav class="mt-3 navi">
-        <ul class="nav nav-pills nav-sidebar flex-column">
-            <li class="nav-item">
-                <a href="#" class="nav-link active">
-                    <i class="nav-icon fas fa-tachometer-alt"></i> Dashboard
-                </a>
-            </li>
-        </ul>
+        <div class="sidebar" role="navigation">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item text-center" style="padding: 20px 0;">
+                        <img src="{{ asset('assets/img/profile.jpg') }}" alt="" class="img-fluid rounded-circle" width="100">
+
+                        <h3>{{ session('name') }}</h3>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('dashboard') }}">
+                            <i class="fa fa-home"></i>
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-cube"></i>
+                            Etalase
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-shopping-cart"></i>
+                            Tambah Produk
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-info"></i>
+                            Report
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    </aside> --}}
 
     <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>

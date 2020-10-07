@@ -47,3 +47,43 @@
 a.nav-link.dropdown-toggle i{
     margin-right: .2rem;
 }
+
+.sidebar {
+    position: absolute;
+    z-index: 1;
+    width: 250px;
+    top: 4rem;
+}
+
+.sidebar .navbar-nav {
+    display: block;
+    width: 100%;
+}
+
+.sidebar .navbar-nav a.nav-link {
+    color: #fff;
+    background-color: #FFAE00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    text-align: center;
+}
+
+.sidebar .navbar-nav h3 {
+    color: #FFAE00;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+}
+
+.sidebar .navbar-nav .nav-item {
+    margin-bottom: .3rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+    }
+}
