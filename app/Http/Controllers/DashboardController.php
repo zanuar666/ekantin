@@ -15,11 +15,4 @@ class DashboardController extends Controller
 
         return view('index', $data);
     }
-
-    public function test(){
-        $user = TopupHistory::find(1);
-        $data = $user->topup;
-        // return $user;
-        return $data;
-    }
 }

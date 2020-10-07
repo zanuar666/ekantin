@@ -10,7 +10,8 @@ class Withdraw extends Model
     protected $primaryKey = "idWithdraw";
 
     // Fungsi Join Dari Tabel user
-    public function user(){
-        return $this->belongsTo('App\User','userId');
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'userId');
     }
 }

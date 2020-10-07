@@ -10,7 +10,8 @@ class Roles extends Model
     protected $primaryKey = "roleId";
 
     // relasi dari tabel user
-    public function user(){
-        return $this->hasOne('App\User','roleId');
+    public function user()
+    {
+        return $this->hasOne('App\User', 'roleId');
     }
 }

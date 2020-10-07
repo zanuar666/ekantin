@@ -10,7 +10,8 @@ class Topup extends Model
     protected $primaryKey = "idTopup";
 
     // Fungsi Join Tabel TopupHistory
-    public function topupHistory(){
-        return $this->hasMany('App\TopupHistory','idTopup');
+    public function topupHistory()
+    {
+        return $this->hasMany('App\TopupHistory', 'idTopup');
     }
 }

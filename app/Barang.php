@@ -10,7 +10,8 @@ class Barang extends Model
     protected $primaryKey = "idBarang";
 
     // Fungsi Join dari tabel user
-    public function user(){
-        return $this->belongsTo('App\User','userId');
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'userId');
     }
 }

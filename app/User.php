@@ -40,22 +40,26 @@ class User extends Authenticatable
     ];
 
     // fungsi join ke tabel role
-    public function role(){
-        return $this->belongsTo('App\Roles','roleId');
+    public function role()
+    {
+        return $this->belongsTo('App\Roles', 'roleId');
     }
 
     // Fungsi Join ke Tabel Barang
-    public function barang(){
+    public function barang()
+    {
         return $this->hasMany('App\Barang', 'userId');
     }
 
     // Fungsi Join Ke Tabel Withdraw
-    public function withdraw(){
-       return $this->hasMany('App\Withdraw','userId');
+    public function withdraw()
+    {
+        return $this->hasMany('App\Withdraw', 'userId');
     }
-    
+
     // Fungsi Join ke Tabel Topup History
-    public function topupHistory(){
-        return $this->hasMany('App\TopupHistory','userId');
+    public function topupHistory()
+    {
+        return $this->hasMany('App\TopupHistory', 'userId');
     }
 }
