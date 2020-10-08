@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\authentication;
+use App\User;
 use eKantin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -35,9 +36,13 @@ class LoginController extends Controller
         }
 
         if ($condition) {
+            $user = User::find($user->userId);
+            $roleName = $user->role->roleName;
+
             Session::put('is_login', true);
             Session::put('username', $user->username);
             Session::put('roleId', $user->roleId);
+            Session::put('role', $roleName);
             Session::put('userId', $user->userId);
             Session::put('name', $user->name);
 

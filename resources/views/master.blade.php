@@ -11,9 +11,12 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-5.14.0/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables.net/1.10.22/css/bootstrap-datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <title>{{ isset($title) ? $title : null }}</title>
+
+    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +36,7 @@
 
         <ul class="nav ml-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-black" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user"></i>
                     {{ session('name') }}
                 </a>
@@ -57,10 +60,11 @@
         <div class="sidebar" role="navigation">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item text-center" style="padding: 20px 0;">
+                    <li class="nav-item text-center" style="padding: 20px 0 0;">
                         <img src="{{ asset('assets/img/profile.jpg') }}" alt="" class="img-fluid rounded-circle" width="100">
 
                         <h3>{{ session('name') }}</h3>
+                        <p>{{ session('role') }}</p>
                     </li>
 
                     <li class="nav-item">
@@ -70,6 +74,16 @@
                         </a>
                     </li>
 
+                    @if(session('roleId') == 1)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('user') }}">
+                            <i class="fa fa-users"></i>
+                            Master User
+                        </a>
+                    </li>
+                    @endif
+
+                    @if(session('roleId') == 2)
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa fa-cube"></i>
@@ -90,6 +104,7 @@
                             Report
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -99,10 +114,11 @@
         @yield('content')
     </div>
 
-    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/sweetalert-2.1.2/dist/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables.net/1.10.22/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables.net/1.10.22/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 

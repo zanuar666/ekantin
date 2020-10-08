@@ -17,7 +17,7 @@
 }
 
 .login-box .card .card-body .form-input input {
-    color: #fff;
+    color: black;
 }
 
 .login-box .card .card-body .form-input button {
@@ -40,7 +40,7 @@
 }
 
 .bg-custom {
-    background-color: #FFAE00 !important;
+    background-color: #EEE816 !important;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
@@ -61,16 +61,19 @@ a.nav-link.dropdown-toggle i{
 }
 
 .sidebar .navbar-nav a.nav-link {
-    color: #fff;
-    background-color: #FFAE00;
+    color: black;
+    background-color: #EEE816;
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     text-align: center;
 }
 
+.sidebar .navbar-nav {
+    color: black;
+}
+
 .sidebar .navbar-nav h3 {
-    color: #FFAE00;
     font-size: 1.3rem;
     padding-top: 1rem;
 }
@@ -88,11 +91,53 @@ a.nav-link.dropdown-toggle i{
 }
 
 .breadcrumb {
-    background: #FFAE00;
+    background: #EEE816;
 }
 
-.breadcrumb li.breadcrumb-item {
-    color: #fff !important;
+.navbar-dark .navbar-brand {
+    color: black;
+}
+
+.text-black {
+    color: black;
+}
+
+.btn-custom-color {
+    color: black;
+    background-color: #EEE816;
+    border-color: #EEE816;
+}
+
+.breadcrumb li.breadcrumb-item,
+.breadcrumb-item+.breadcrumb-item::before {
+    color: black !important;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+    float: right;
+    font-family: "Font Awesome 5 Free";
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+    float: right;
+    font-family: "Font Awesome 5 Free";
+}
+
+table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    float: right;
+    font-family: "Font Awesome 5 Free";
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    float: right;
+    margin-top: .5rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -100,7 +145,7 @@ a.nav-link.dropdown-toggle i{
         width: 100%;
         left: 0;
         right: 0;
-        background: #ffae00;
+        background: #EEE816;
         top: 3rem;
     }
 
@@ -108,8 +153,8 @@ a.nav-link.dropdown-toggle i{
         padding: 1rem;
     }
 
-    .sidebar .navbar-nav h3 {
-        color: #fff;
+    .sidebar .navbar-nav {
+        color: black;
     }
 
     .content {

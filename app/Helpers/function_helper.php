@@ -19,3 +19,8 @@ function isLogin()
 {
     return (Session::get('is_login') == true);
 }
+
+function getCurrentIdUser()
+{
+    return Session::get('userId');
+}

@@ -23,4 +23,5 @@ Route::get('logout', 'LoginController@logout');
 
 Route::group(['middleware' => ['CekSession']], function () {
     Route::get('dashboard', 'DashboardController@index');
+    Route::get('user', 'UserController@index');
 });
