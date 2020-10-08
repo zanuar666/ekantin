@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2020-10-07 16:32:54
+Date: 2020-10-08 13:07:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -44,12 +44,15 @@ CREATE TABLE `roles` (
   `roleId` int(2) NOT NULL AUTO_INCREMENT,
   `roleName` varchar(10) NOT NULL,
   PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of roles
 -- ----------------------------
 INSERT INTO `roles` VALUES ('1', 'Admin');
+INSERT INTO `roles` VALUES ('2', 'Penjual');
+INSERT INTO `roles` VALUES ('3', 'Siswa');
+INSERT INTO `roles` VALUES ('4', 'Guru');
 
 -- ----------------------------
 -- Table structure for topuphistory
@@ -143,12 +146,15 @@ CREATE TABLE `users` (
   PRIMARY KEY (`userId`),
   KEY `roleId` (`roleId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`roleId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('2', 'admin', 'admin', 'Arizal', '1', '0.00');
+INSERT INTO `users` VALUES ('2', 'admin', 'admin', 'Moch Arizal Fauzi', '1', '0.00');
+INSERT INTO `users` VALUES ('3', 'siswa', 'siswa', 'Robby Prawira Eka Pasha', '3', '0.00');
+INSERT INTO `users` VALUES ('4', 'penjual', 'penjual', 'Muhammad Andika Dayu Anglita Putra', '2', '0.00');
+INSERT INTO `users` VALUES ('5', 'guru', 'guru', 'Rahmad Nakula Zanuar', '4', '0.00');
 
 -- ----------------------------
 -- Table structure for withdraw
