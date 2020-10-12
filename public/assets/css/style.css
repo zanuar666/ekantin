@@ -2,6 +2,13 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #1b357b !important;
+    border-color: #1b357b !important;
+}
+
 .login-box .card .card-body h1 {
     font-size: 22px;
 }
@@ -40,7 +47,7 @@
 }
 
 .bg-custom {
-    background-color: #EEE816 !important;
+    background-color: #16213e;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
@@ -62,7 +69,7 @@ a.nav-link.dropdown-toggle i{
 
 .sidebar .navbar-nav a.nav-link {
     color: black;
-    background-color: #EEE816;
+    background-color: #ffd800;
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
@@ -91,26 +98,26 @@ a.nav-link.dropdown-toggle i{
 }
 
 .breadcrumb {
-    background: #EEE816;
+    background: #16213e;
 }
 
 .navbar-dark .navbar-brand {
-    color: black;
+    color: #fff;
 }
 
 .text-black {
-    color: black;
+    color: #fff;
 }
 
 .btn-custom-color {
     color: black;
-    background-color: #EEE816;
-    border-color: #EEE816;
+    background-color: #ffd800;
+    border-color: #ffd800;
 }
 
 .breadcrumb li.breadcrumb-item,
 .breadcrumb-item+.breadcrumb-item::before {
-    color: black !important;
+    color: #fff;
 }
 
 table.dataTable {
